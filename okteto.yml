@@ -1,0 +1,13 @@
+name: final-rasa-server
+image: okteto.dev/rasa-server-okteto:latest
+command: bash
+sync:
+- .:/app
+forward:
+- 5006:5006
+reverse:
+- 9000:9000
+autocreate: true
+volumes:
+- /root/.cache/pip
+
