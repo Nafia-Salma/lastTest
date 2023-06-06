@@ -3,7 +3,7 @@ services:
 
   rasa:
     image: rasa-server-okteto:latest
-    working_dir: /app
+    working_dir: "/app"
     build:
       context: .
       dockerfile: Dockerfile
@@ -19,7 +19,7 @@ services:
 
   rasa-actions:
     image: rasa-server-okteto:latest
-    working_dir: /app
+    working_dir: "/app"
     build:
       context: .
       dockerfile: Dockerfile
