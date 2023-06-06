@@ -4,7 +4,9 @@ services:
   rasa:
     image: rasa-server-okteto:latest
     working_dir: /app
-    build: './'
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./actions:/app/actions
       - ./data:/app/data
@@ -18,7 +20,9 @@ services:
   rasa-actions:
     image: rasa-server-okteto:latest
     working_dir: /app
-    build: './'
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./actions: /app/actions
     command: bash -c "rasa run actions"
