@@ -1,7 +1,7 @@
-FROM python:3.8.16-stretch AS BASE
+FROM python:3.8.16-slim-buster AS BASE
 
 RUN apt-get update \
-      && apt-get --assume-yes --no-install-recommends install\
+      && apt-get --assume-yes --no-install-recommends install \
       build-essential \
       curl \
       git \
@@ -16,7 +16,6 @@ RUN pip install --no-cache-dir --upgrade pip
 
 # Install Rasa version 3.5.10
 RUN pip install --no-cache-dir rasa
-
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
