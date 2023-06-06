@@ -6,9 +6,9 @@ services:
     working_dir: /app
     build: './'
     volumes:
-      - ./actions: /app/actions
-      - ./data: /app/data
-      - ./tests: /app/tests/
+      - ./actions:/app/actions
+      - ./data:/app/data
+      - ./tests:/app/tests/
     command: bash -c "rm -rf .rasa/* && rasa train && rasa run --enable-api --cors \"*\""
     ports:
       - '5006:5005'
