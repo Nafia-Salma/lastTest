@@ -11,7 +11,7 @@ services:
       - ./actions:/app/actions
     command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\""
     ports:
-      - '8080:8080'
+      - '5005:8080'
     public: true
     networks:
       - all
