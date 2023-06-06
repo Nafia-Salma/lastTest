@@ -1,34 +1,30 @@
 version: '3.4'
 services:
-
   rasa:
-    image: rasa-server-okteto:latest
-    working_dir: "/app"
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: rasa-bot:latest
+    build: "./"
+    restart: always
+    working_dir: /app
     volumes:
-      - ./actions:/app/actions
+      - ./models:/app/models
       - ./data:/app/data
-      - ./tests:/app/tests/
-    command: bash -c "rm -rf .rasa/* && rasa train && rasa run --enable-api --cors \"*\""
+      - ./actions:/app/actions
+    command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\""
     ports:
-      - '5006:5005'
-    public: true
+      - '5005:5005'
     networks:
       - all
 
   rasa-actions:
-    image: rasa-server-okteto:latest
-    working_dir: "/app"
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: "./"
+    image: rasa-bot:latest
+    restart: always
+    working_dir: /app
     volumes:
       - ./actions:/app/actions
-    command: bash -c "rasa run actions"
+    command: ["rasa","run","actions"]
     ports:
-      - '5055:5055'
+    - '5055:5055'
     networks:
       - all
 
