@@ -28,54 +28,78 @@ class ValidateProductForm(FormValidationAction):
         if slot_value.lower() not in sgbd.allowed_categories:
             dispatcher.utter_message(text=f"We only accept those categories: {', '.join(sgbd.allowed_categories)}.")
             return {"product_category": None}
-        dispatcher.utter_message(text=f"We have in {slot_value} category those colors: {', '.join(sgbd.get_colors_by_category(slot_value))}.")
+        dispatcher.utter_message(text=f"We have in {slot_value} category those RAMs: {', '.join(sgbd.get_RAM_by_category(slot_value))}.")
         return {"product_category": slot_value}
 
-    def validate_product_color(
+    def validate_product_RAM(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
-        """Validate `product_color` value."""
+        """Validate `product_RAM` value."""
         
-        if slot_value not in sgbd.allowed_colors:
-            dispatcher.utter_message(text=f"I don't recognize the color. We serve {', '.join(sgbd.allowed_colors)} in this category.")
-            return {"product_color": None}
-        dispatcher.utter_message(text=f"You want to have the {slot_value} color. We have those sizes: {', '.join(sgbd.get_sizes_by_color(slot_value))}")
-        return {"product_color": slot_value}
+        if slot_value not in sgbd.allowed_RAMs:
+            dispatcher.utter_message(text=f"We don't have this in store. Please choose between: {', '.join(sgbd.allowed_RAMs)}.")
+            return {"product_RAM": None}
+        dispatcher.utter_message(text=f"You want to have {slot_value} in RAM. We have those processors: {', '.join(sgbd.get_processor_by_RAM(slot_value))}")
+        return {"product_RAM": slot_value}
     
-    def validate_product_size(
+    def validate_product_processor(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
-        """Validate `product_size` value."""
+        """Validate `product_processor` value."""
 
-        if slot_value.lower() not in sgbd.allowed_sizes:
-            dispatcher.utter_message(text=f"We only have thoses sizes: {', '.join(sgbd.allowed_sizes)}.")
-            return {"product_size": None}
-        dispatcher.utter_message(text=f"You want to have the {slot_value} size. We have those products in stock: {', '.join(sgbd.get_product_name_by_size(slot_value))}.")
-        return {"product_size": slot_value}
+        if slot_value not in sgbd.allowed_processors:
+            dispatcher.utter_message(text=f"We only have thoses processors: {', '.join(sgbd.allowed_processors)}.")
+            return {"product_processor": None}
+        dispatcher.utter_message(text=f"You want to have the {slot_value} processor. We have those capacities in stock: {', '.join(sgbd.get_storage_capacity_by_processor(slot_value))}.")
+        return {"product_processor": slot_value}
+    
+    def validate_product_storage_capacity(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `product_storage_capacity` value."""
+
+        if slot_value not in sgbd.allowed_storage_capacities:
+            dispatcher.utter_message(text=f"We only have thoses storage capacities: {', '.join(sgbd.allowed_storage_capacities)}.")
+            return {"product_storage_capacity": None}
         
-    def validate_product_name(
+        message = ""
+        brand_price_list = sgbd.get_brand_by_storage_capacity(slot_value)
+        for brand_price in brand_price_list:
+            brand = brand_price[0]
+            price = brand_price[1]
+            text = f"{brand}: {price}"
+            message += text + ', '
+
+        dispatcher.utter_message(text=f"You want to have the {slot_value} storage capacity. We have those brands in stock: {message}.")
+        return {"product_storage_capacity": slot_value}
+    
+    def validate_product_brand(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict,
     ) -> Dict[Text, Any]:
-        """Validate `product_name` value."""
+        """Validate `product_brand` value."""
 
-        if slot_value.lower() not in sgbd.allowed_products:
-            dispatcher.utter_message(text=f"We only have those products in stock: {', '.join(sgbd.allowed_products)}.")
-            return {"product_name": None}
-        dispatcher.utter_message(text=f"We have {sgbd.get_product_quantity_by_size()} from {slot_value}")
-        return {"product_name": slot_value}
-
+        if slot_value not in sgbd.allowed_brands:
+            dispatcher.utter_message(text=f"We only have thoses brands: {', '.join(sgbd.allowed_brands)}.")
+            return {"product_brand": None}
+        dispatcher.utter_message(text=f"You want to have {slot_value}. We have {', '.join(sgbd.get_product_quantity_by_brand(slot_value))} from this.")
+        return {"product_brand": slot_value}
+        
     def validate_product_quantity(
         self,
         slot_value: Any,
@@ -85,8 +109,8 @@ class ValidateProductForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `product_quantity` value."""
         
-        if int(slot_value.lower()) < 1 or int(slot_value.lower()) > sgbd.allowed_quantity:
-            dispatcher.utter_message(text=f"We only have {sgbd.allowed_quantity} from this products.")
+        if int(slot_value) < 1 or int(slot_value) > sgbd.allowed_quantity:
+            dispatcher.utter_message(text=f"We only have {sgbd.allowed_quantity} from this product.")
             return {"product_quantity": None}
         dispatcher.utter_message(text=f"OK! You want to have {slot_value} from this product.")
         return {"product_quantity": slot_value}
@@ -104,11 +128,8 @@ class SubmitProductForm(Action):
         """Submit the order and update the quantity of the ordered product."""
         # submit the order
 
-        product_name = tracker.get_slot("product_name")
-        color = tracker.get_slot("product_color")
-        size = tracker.get_slot("product_size")
         ordered_quantity = tracker.get_slot("product_quantity")
-        sgbd.update_quantity(product_name, color, size, ordered_quantity)
+        sgbd.update_quantity(ordered_quantity)
         dispatcher.utter_message(text="Your order has been successfully placed.")
         return []
 
@@ -123,5 +144,5 @@ class ResetProductForm(Action):
     ):
         """Reset `product form` values."""
 
-        slots = ["product_category", "product_color", "product_size", "product_name", "product_quantity"]
+        slots = ["product_category", "product_RAM", "product_processor", "product_storage_capacity", "product_brand", "product_quantity"]
         return [SlotSet(slot, None) for slot in slots]

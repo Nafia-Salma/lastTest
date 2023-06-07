@@ -15,9 +15,7 @@ intents:
 - inform_product_quantity
 - inform_product_processor
 - inform_product_RAM
-- inform_product_name
 - inform_product_storage_capacity
-- inform_product_price
 - show_report
 - stop
 - thanks
@@ -29,7 +27,6 @@ entities:
 - product_price
 - product_category
 - product_quantity
-- product_name
 - user_name
 slots:
   user_name:
@@ -38,15 +35,6 @@ slots:
     mappings:
     - type: from_entity
       entity: user_name
-  product_name:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: product_name
-      conditions:
-      - active_loop: product_form
-        requested_slot: product_name
   product_category:
     type: text
     influence_conversation: true
@@ -98,11 +86,12 @@ forms:
   product_form:
     required_slots:
     - product_category
-    - product_name
-    - product_quantity
     - product_RAM
     - product_processor
     - product_storage_capacity
+    - product_brand
+    - product_quantity
+    
 responses:
   utter_greet:
   - text: Hi there! Is there anything I can help you with?
@@ -118,11 +107,9 @@ responses:
   - text: Of course! What do you need help with?
   - text: I'm here to assist you. What do you need help with?
   utter_bot_challenge:
-  - text: I'm a chatbot, your personal Style Assistant and Retail Technology.
-  - text: I'm a chatbot. My name is SART, which stands for Style Assistant and Retail Technology.
-  - text: I'm a Chatbot. Call me SART, which is short for Style Assistant and Retail Technology.
+  - text: I'm a chatbot.
   utter_bot_age:
-  - text: Same as yours
+  - text: 2 months
   utter_goodbye:
   - text: Goodbye! Have a nice day.
   - text: Bye! Take care!
@@ -137,13 +124,15 @@ responses:
   utter_ask_product_RAM:
   - text: What is the size of RAM would you like to be in your computer ?
   utter_ask_product_storage_capacity:
-  - text: What is the storage capacity would you like to be in your computer?
+  - text: What is the storage capacity you want?
   utter_ask_product_name:
   - text: what product do you want ?
+  utter_ask_product_brand:
+  - text: what brand do you prefer ?
   utter_ask_product_quantity:
-  - text: How much of {product_name} you want?
+  - text: How much you want?
   utter_cancel_order:
-  - text: The order for {product_name} has been cancelled successfully.
+  - text: The order has been cancelled successfully.
   utter_show_report:
   - text: The report is being generated. Please wait for a moment.
 actions:

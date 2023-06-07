@@ -92,63 +92,53 @@ nlu:
     - see you around
     - bye bye
     - see you later
-- intent: buy_computer
+- intent: buy_product
   examples: |
     - i'd like to buy a computer
     - i want a computer
     - can i buy a computer
     - i want to buy a computer
-    - Do you have [Laptop](product_category) in stock?
-    - How many [Desktop](product_category) do you have available?
-    - What is the stock level for [Laptop](product_category)?
-    - Can you tell me if you have [Desktop] product_category) in stock?
-    - Do you have any [Laptop] product_category) in stock?
-    - How many [Desktop] product_category) do you have available?
-- intent: inform product_category
+- intent: inform_product_category
   examples: |
-    - I'm interested in a [Laptop] product_category)
-    - I want a [Desktop] product_category)
-    - [Desktop] product_category)
-    - [Laptop] product_category) category please
-    - i want [Desktop] product_category)
-- intent: inform product_name
+    - I'm interested in a [Laptop](product_category)
+    - I want a [Desktop](product_category)
+    - [Desktop](product_category)
+    - [Laptop](product_category) category please
+    - i want [Desktop](product_category)
+- intent: inform_product_RAM
   examples: |
-    - I want the [Gaming Desktop] product_name)
-    - I'm interested in the [ All-in-One PC] product_name)
-    - [Workstation Desktop] product_name)
-    - [Gaming Laptop] product_name) please
-    - [Workstation Desktop] product_name)
-    - [ All-in-One PC] product_name)
-    - [Workstation Desktop] product_name)
-    - [Gaming Desktop] product_name) please
-    - [Workstation Desktop] product_name)
-    - [ All-in-One PC] product_name)
-- intent: inform product_RAM
+    - RAM : [8GB](product_RAM)
+    - I'm interested in computers that have [32GB](product_RAM) in the RAM
+    - [16GB](product_RAM)   
+- intent: inform_product_processor
   examples: |
-    - RAM : [8GB] product_RAM)
-    - I'm interested in computers that have  [32GB] product_RAM) in the RAM
-    - [16GB] product_RAM)   
-- intent: inform product_processor
+    - processor : [Intel Core i7](product_processor)
+    - I'm interested in computers that have  [Intel Core i5](product_processor) in the processor
+    - [AMD Ryzen 7](product_processor)
+    - [Intel Core i9](product_processor)
+- intent: inform_product_brand
   examples: |
-    - processor : [Intel Core i7] product_processor)
-    - I'm interested in computers that have  [32GB] product_processor) in the RAM
-    - [16GB] product_processor)     
-- intent: inform product_brand
+    - brand : [Dell](product_brand)
+    - I'm interested in [Sumsung](product_brand) computers
+    - [HP](product_brand)
+- intent: inform_product_quantity
   examples: |
-    - brand : [Dell] product_brand)
-    - I'm interested in [Sumsung] product_brand) computers
-    - [HP] product_brand)
-- intent: inform product_quantity
+    - [20](product_quantity)
+    - give me [5](product_quantity)
+    - I want [10](product_quantity) please
+    - [3](product_quantity)
+    - [3](product_quantity) please
+- intent: inform_product_storage_capacity
   examples: |
-    - [20] product_quantity)
-    - give me [5] product_quantity)
-    - I want [10] product_quantity) please
-    - [3] product_quantity)
-    - [3] product_quantity) please
+    - [512GB SSD](product_storage_capacity)
+    - give me [2TB HDD](product_storage_capacity)
+    - I want [256GB SSD](product_storage_capacity) please
+    - [1TB SSD](product_storage_capacity)
+    - [256GB SSD](product_storage_capacity) please    
 - intent: cancel_order
   examples: |
-    - Can you cancel my order for [2] product_quantity) of [All-in-One PC] product_name)?
-    - I no longer need [10] product_quantity) of [Gaming Laptop] product_name). Can you please cancel the order?
+    - Can you cancel my order ?
+    - I no longer need this product. Can you please cancel the order?
     - Cancel the order
     - I no longer want this computer
 - intent: show_report
