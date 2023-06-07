@@ -139,6 +139,8 @@ responses:
   - text: Sorry, I can't handle that request.
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_ok:
+  - text: ok
 actions:
 - action_submit_product_form
 - utter_help
