@@ -9,7 +9,7 @@ services:
       - ./models:/app/models
       - ./data:/app/data
       - ./actions:/app/actions
-    command: bash -c "rm -rf models/* && rasa train && rasa run actions && rasa run --enable-api --cors \"*\" -p 8080"
+    command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" -p 8080"
     ports:
       - '5005:8080'
     public: true
@@ -23,7 +23,7 @@ services:
     working_dir: /app
     volumes:
       - ./actions:/app/actions
-    command: ["rasa","run","actions"]
+    command: rasa run actions
     ports:
     - '5055:5055'
     networks:
