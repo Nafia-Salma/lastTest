@@ -5,22 +5,23 @@ class mySGBD():
         # initialize the tables
         self.prd = pd.read_csv("./actions/products.csv", sep=',')
 
-
+        self.prd['category'] = self.prd['category'].str.lower()
         self.allowed_categories = list(self.prd['category'].unique()) # list of the allowed categories
-        
-        self.allowed_RAM = [] 
+           
+        self.allowed_RAMs = [] 
         self.allowed_processors = [] 
         self.allowed_storage_capacities = []
         self.allowed_brand_price = []
+        self.allowed_brands = []
         self.allowed_quantity = 1 # product quantity in stock
     
     #get available RAMs for the chosen category
     def get_RAM_by_category(self, category):
 
         self.allowed_prd = self.prd[self.prd['category'].str.lower() == category.lower()]
-        self.allowed_RAM = list(self.allowed_prd['RAM'].unique())
+        self.allowed_RAMs = list(self.allowed_prd['RAM'].unique())
         
-        return self.allowed_RAM
+        return self.allowed_RAMs
 
      #get available processors for the chosen category
     def get_processor_by_RAM(self, RAM):
@@ -43,6 +44,7 @@ class mySGBD():
 
         self.allowed_prd = self.allowed_prd[self.allowed_prd['storage_capacity'] == storage_capacity]
         self.allowed_brand_price = self.allowed_prd[['brand', 'price']].values.tolist()
+        self.allowed_brands = self.allowed_prd['brand'].tolist()
         
         return self.allowed_brand_price
     

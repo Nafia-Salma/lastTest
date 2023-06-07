@@ -86,3 +86,27 @@ rules:
   # Return to form after handling the `bot_challenge` intent
   - action: product_form
   - active_loop: product_form
+
+- rule: stop form
+  condition:
+  - active_loop: product_form
+  steps:
+  - intent: stop
+  - action: utter_ask_continue
+
+- rule: affirm stop form
+  condition:
+  - active_loop: product_form
+  steps:
+  - intent: affirm
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_reset_product_form
+
+- rule: deny stop form
+  condition:
+  - active_loop: product_form
+  steps:
+  - intent: deny
+  - action: product_form
+  - active_loop: product_form
