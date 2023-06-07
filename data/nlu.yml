@@ -98,6 +98,7 @@ nlu:
     - i want a computer
     - can i buy a computer
     - i want to buy a computer
+
 - intent: inform_product_category
   examples: |
     - I'm interested in a [Laptop](product_category)
@@ -110,6 +111,8 @@ nlu:
     - RAM : [8GB](product_RAM)
     - I'm interested in computers that have [32GB](product_RAM) in the RAM
     - [16GB](product_RAM)   
+    - I prefer[16GB](product_RAM)
+    - [8GB](product_RAM) would be good
 - intent: inform_product_processor
   examples: |
     - processor : [Intel Core i7](product_processor)
@@ -121,6 +124,8 @@ nlu:
     - brand : [Dell](product_brand)
     - I'm interested in [Sumsung](product_brand) computers
     - [HP](product_brand)
+    - I want [Lenovo](product_brand)
+    - I prefer [CyberPowerPC](product_brand)
 - intent: inform_product_quantity
   examples: |
     - [20](product_quantity)
@@ -131,6 +136,7 @@ nlu:
 - intent: inform_product_storage_capacity
   examples: |
     - [512GB SSD](product_storage_capacity)
+    - I prefer [512GB SSD](product_storage_capacity)
     - give me [2TB HDD](product_storage_capacity)
     - I want [256GB SSD](product_storage_capacity) please
     - [1TB SSD](product_storage_capacity)
