@@ -98,7 +98,7 @@ responses:
   - text: Hey! How may I assist you with your computer needs?
   utter_greet_with_name:
   - text: Hello {user_name}! Welcome to our computer store. How can I assist you today?
-  - text: Hello {user_name}! How can I help you find the perfect computer for you?
+  - text: Hello {user_name}! How can I help you to find what are you wishing?
   - text: Good day {user_name}! What can I help you find today?
   utter_welcome:
   - text: No problem, happy to help!
