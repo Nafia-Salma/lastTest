@@ -97,7 +97,7 @@ class ValidateProductForm(FormValidationAction):
         if slot_value not in sgbd.allowed_brands:
             dispatcher.utter_message(text=f"We only have thoses brands: {', '.join(sgbd.allowed_brands)}.")
             return {"product_brand": None}
-        dispatcher.utter_message(text=f"You want to have {slot_value}. We have {', '.join(sgbd.get_product_quantity_by_brand(slot_value))} from this.")
+        dispatcher.utter_message(text=f"You want to have {slot_value}. We have {sgbd.get_product_quantity_by_brand(slot_value)} from this.")
         return {"product_brand": slot_value}
         
     def validate_product_quantity(

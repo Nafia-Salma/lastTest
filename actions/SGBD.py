@@ -59,7 +59,7 @@ class mySGBD():
         product_info = self.allowed_prd.values.tolist()
         product_id = product_info[0][0]
          
-        self.prd.loc[self.prd['id'] == product_id, 'quantity'] -= ordered_quantity
+        self.prd.loc[self.prd['id'] == product_id, 'quantity'] -= int(ordered_quantity)
 
         self.prd = self.prd[self.prd['quantity'] > 0]
 
