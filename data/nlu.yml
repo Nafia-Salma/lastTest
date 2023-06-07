@@ -1,11 +1,12 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
+    - hi
     - hey
     - hello
-    - hi
+    - howdy
+    - sup
     - hello there
     - good morning
     - good evening
@@ -16,7 +17,69 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
+- intent: greet_with_name
+  examples: |
+    - hey there i am [Samira Alaoui](user_name)
+    - hi my name is [Omar Ibn Sina](user_name)
+    - hello i'm [Youness Asdad(user_name)
+    - hey there my name is [Mustapha Khalid](user_name)
+    - hi i'm [Salim](user_name)
+    - good morning i'm [Salma Nafia](user_name)
+- intent: thanks
+  examples: |
+    - Thank you
+    - Thanks for your help!
+    - Thanks
+    - Thanks for the help
+    - ty
+    - thank you
+- intent: help
+  examples: |
+    - Can you help me?
+    - I need help
+    - Assist me please
+    - Help
+    - help me
+- intent: bot_challenge
+  examples: |
+    - Who are you?
+    - What are you?
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are u?
+- intent: bot_age
+  examples: |
+    - What's your age?
+    - How old are you?
+    - Your age?
+    - Age?
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - affirm
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: stop
+  examples: |
+    - stop
+    - nevermind
+    - please stop
+    - i want to stop
+    - stop the form
 - intent: goodbye
   examples: |
     - cu
@@ -29,75 +92,68 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
-- intent: affirm
+- intent: buy_computer
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
+    - i'd like to buy a computer
+    - i want a computer
+    - can i buy a computer
+    - i want to buy a computer
+    - Do you have [Laptop](product_category) in stock?
+    - How many [Desktop](product_category) do you have available?
+    - What is the stock level for [Laptop](product_category)?
+    - Can you tell me if you have [Desktop] product_category) in stock?
+    - Do you have any [Laptop] product_category) in stock?
+    - How many [Desktop] product_category) do you have available?
+- intent: inform product_category
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
+    - I'm interested in a [Laptop] product_category)
+    - I want a [Desktop] product_category)
+    - [Desktop] product_category)
+    - [Laptop] product_category) category please
+    - i want [Desktop] product_category)
+- intent: inform product_name
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
+    - I want the [Gaming Desktop] product_name)
+    - I'm interested in the [ All-in-One PC] product_name)
+    - [Workstation Desktop] product_name)
+    - [Gaming Laptop] product_name) please
+    - [Workstation Desktop] product_name)
+    - [ All-in-One PC] product_name)
+    - [Workstation Desktop] product_name)
+    - [Gaming Desktop] product_name) please
+    - [Workstation Desktop] product_name)
+    - [ All-in-One PC] product_name)
+- intent: inform product_RAM
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
+    - RAM : [8GB] product_RAM)
+    - I'm interested in computers that have  [32GB] product_RAM) in the RAM
+    - [16GB] product_RAM)   
+- intent: inform product_processor
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-
-- intent: support_team
+    - processor : [Intel Core i7] product_processor)
+    - I'm interested in computers that have  [32GB] product_processor) in the RAM
+    - [16GB] product_processor)     
+- intent: inform product_brand
   examples: |
-    - i want to contact support support team
-    - support team
-    - can you please connect me with your team
-    - can i talk to human 
-    - i have a query to ask
-    - i need tech support
-    - contact me
-    - i want to connect team
+    - brand : [Dell] product_brand)
+    - I'm interested in [Sumsung] product_brand) computers
+    - [HP] product_brand)
+- intent: inform product_quantity
+  examples: |
+    - [20] product_quantity)
+    - give me [5] product_quantity)
+    - I want [10] product_quantity) please
+    - [3] product_quantity)
+    - [3] product_quantity) please
+- intent: cancel_order
+  examples: |
+    - Can you cancel my order for [2] product_quantity) of [All-in-One PC] product_name)?
+    - I no longer need [10] product_quantity) of [Gaming Laptop] product_name). Can you please cancel the order?
+    - Cancel the order
+    - I no longer want this computer
+- intent: show_report
+  examples: |
+    - Can you show me a report of my inventory?
+    - How is my inventory doing?
+    - Can you give me an overview of my stock levels?
+    - Show me a report of my stock levels

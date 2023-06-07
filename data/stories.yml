@@ -1,35 +1,154 @@
 version: "3.1"
 
 stories:
+  # scenario where user challenge the bot
+  - story: bot challenge
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  # scenario where user requests inventory report
+  - story: show inventory report
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: show_report
+    - action: utter_show_report
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: support_team
-  steps:
-  - intent: support_team
-  - action: utter_support_team
+  # happy path
+  - story: happy_path
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+    - intent: help
+    - action: utter_help
+    - intent: buy_product
+    - action: product_form
+    - active_loop: product_form
+    - slot_was_set:
+      - requested_slot: product_category
+    - slot_was_set:
+      - product_category: Laptop
+    - slot_was_set:
+      - requested_slot: product_pocessor
+    - slot_was_set:
+      - product_processor: Intel Core i7
+    - slot_was_set:
+      - requested_slot: product_name
+    - slot_was_set:
+      - product_name: Gaming Laptop
+    - slot_was_set:
+      - requested_slot: product_storage_capacity
+    - slot_was_set:
+      - product_storage_capacity: 512GB SSD 
+    - slot_was_set:
+      - requested_slot: product_RAM
+    - slot_was_set:
+      - product_storage_capacity: 16GB    
+    - slot_was_set:
+      - requested_slot: product_quantity
+    - slot_was_set:
+      - product_quantity: 2
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_submit_product_form
+    - action: action_reset_product_form
+    - intent: goodbye
+    - action: utter_goodbye
+    
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_challenge
+    - action: utter_bot_challenge
+    - intent: help
+    - action: utter_help
+    - intent: buy_product
+    - action: product_form
+    - active_loop: product_form
+    - slot_was_set:
+      - requested_slot: product_category
+    - intent: inform_product_category
+      entities:
+      - product_category: Laptop
+    - slot_was_set:
+      - product_category: Laptop
+    - action: product_form
+    - slot_was_set:
+      - product_category: Laptop
+    - slot_was_set:
+      - requested_slot: product_processor
+    - intent: inform_product_processor
+      entities:
+      - product_pocessor: Intel Core i7
+    - slot_was_set:
+      - product_processor: Intel Core i7
+    - action: product_form
+    - slot_was_set:
+      - product_processor: Intel Core i7
+    - slot_was_set:
+      - requested_slot: product_RAM
+    - intent: inform_product_RAM
+      entities:
+      - product_RAM: 16GB
+    - slot_was_set:
+      - product_RAM: 16GB
+    - action: product_form
+    - slot_was_set:
+      - product_RAM: 16GB
+    - intent: inform_product_storage_capacity
+      entities:
+      - product_storage_capacity: 512GB SSD
+    - slot_was_set:
+      - product_storage_capacity: 512GB SSD
+    - action: product_form
+    - slot_was_set:
+      - product_storage_capacity: 512GB SSD  
+    - slot_was_set:
+      - requested_slot: product_name
+    - intent: inform_product_name
+      entities:
+      - product_name: Gaming Laptop
+    - slot_was_set:
+      - product_name: Gaming Laptop
+    - action: product_form
+    - slot_was_set:
+      - product_name: null
+    - slot_was_set:
+      - requested_slot: product_name
+    - intent: inform_product_name
+      entities:
+      - product_name: Workstation Desktop
+    - slot_was_set:
+      - product_name: Workstation Desktop
+    - action: product_form
+    - slot_was_set:
+      - product_name: Workstation Desktop
+    - slot_was_set:
+      - requested_slot: product_quantity
+    - intent: inform_product_quantity
+      entities:
+      - product_quantity: '3'
+    - slot_was_set:
+      - product_quantity: '3'
+    - action: product_form
+    - slot_was_set:
+      - product_quantity: '3'
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_submit_product_form
+    - action: action_reset_product_form
+    - intent: goodbye
+    - action: utter_goodbye
+    - intent: stop

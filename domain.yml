@@ -1,38 +1,159 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - support_team
+- affirm
+- bot_age
+- bot_challenge
+- buy_product
+- cancel_order
+- deny
+- goodbye
+- greet
+- greet_with_name
+- help
+- inform_product_brand
+- inform_product_category
+- inform_product_quantity
+- inform_product_processor
+- inform_product_RAM
+- inform_product_name
+- inform_product_storage_capacity
+- inform_product_price
+- show_report
+- stop
+- thanks
+entities:
+- product_brand
+- product_storage_capacity
+- product_RAM
+- product_processor
+- product_price
+- product_category
+- product_quantity
+- product_name
+- user_name
+slots:
+  user_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: user_name
+  product_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_name
+      conditions:
+      - active_loop: product_form
+        requested_slot: product_name
+  product_category:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_category
+      conditions:
+      - active_loop: product_form
+        requested_slot: product_category
+  product_RAM:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_RAM
+  product_storage_capacity:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_storage_capacity     
 
+  product_brand:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_brand
+
+  product_processor:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_processor
+      conditions:
+      - active_loop: product_form
+        requested_slot: product_processor
+  product_quantity:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_quantity
+      conditions:
+      - active_loop: product_form
+        requested_slot: product_quantity
+forms:
+  product_form:
+    required_slots:
+    - product_category
+    - product_name
+    - product_quantity
+    - product_RAM
+    - product_processor
+    - product_storage_capacity
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Hi there! Is there anything I can help you with?
+  - text: Hey! How may I assist you with your computer needs?
+  utter_greet_with_name:
+  - text: Hello {user_name}! Welcome to our computer store. How can I assist you today?
+  - text: Hello {user_name}! How can I help you find the perfect computer for you?
+  - text: Good day {user_name}! What can I help you find today?
+  utter_welcome:
+  - text: No problem, happy to help!
+  - text: I'm glad I could assist you!
+  utter_help:
+  - text: Of course! What do you need help with?
+  - text: I'm here to assist you. What do you need help with?
+  utter_bot_challenge:
+  - text: I'm a chatbot, your personal Style Assistant and Retail Technology.
+  - text: I'm a chatbot. My name is SART, which stands for Style Assistant and Retail Technology.
+  - text: I'm a Chatbot. Call me SART, which is short for Style Assistant and Retail Technology.
+  utter_bot_age:
+  - text: Same as yours
   utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-  utter_support_team:
-  - text: "We will contact you soon, please wait for 24-48hours."
-
+  - text: Goodbye! Have a nice day.
+  - text: Bye! Take care!
+  - text: Goodbye! Have a great day!
+  - text: See you later!
+  utter_ask_continue:
+  - text: Are you sure you want to stop the form?
+  utter_ask_product_category:
+  - text: what category are you looking for ?
+  utter_ask_product_processor:
+  - text: what is the type of processor would you like to be in your computer ?
+  utter_ask_product_RAM:
+  - text: What is the size of RAM would you like to be in your computer ?
+  utter_ask_product_storage_capacity:
+  - text: What is the storage capacity would you like to be in your computer?
+  utter_ask_product_name:
+  - text: what product do you want ?
+  utter_ask_product_quantity:
+  - text: How much of {product_name} you want?
+  utter_cancel_order:
+  - text: The order for {product_name} has been cancelled successfully.
+  utter_show_report:
+  - text: The report is being generated. Please wait for a moment.
+actions:
+- action_submit_product_form
+- utter_help
+- utter_bot_challenge
+- action_reset_product_form
+- utter_goodbye
+- utter_greet
+- validate_product_form
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
