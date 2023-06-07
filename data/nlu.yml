@@ -174,3 +174,9 @@ nlu:
     - What is the secret to eternal youth and happiness?
     - What is 2 + 2?
     - Who's the US President?
+- intent: restart
+  examples: |
+    - refresh
+    - refresh please
+    - restart
+    - restart the conversation
