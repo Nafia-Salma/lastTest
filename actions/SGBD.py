@@ -58,33 +58,33 @@ class mySGBD():
         product_id = product_info[0][0]
          
         self.prd.loc[self.prd['id'] == product_id, 'quantity'] -= ordered_quantity
-        print(self.prd[self.prd['id'] == product_id])
 
         self.prd = self.prd[self.prd['quantity'] > 0]
 
     
 if __name__ == '__main__':
 
-    #code to test the functions
-    sgbd = mySGBD()
-    categories = sgbd.allowed_categories
-    print(categories)
+    # #code to test the functions
+    # sgbd = mySGBD()
+    # categories = sgbd.allowed_categories
+    # print(categories)
 
-    RAM = sgbd.get_RAM_by_category('Laptop')
-    print(RAM)
+    # RAM = sgbd.get_RAM_by_category('Laptop')
+    # print(RAM)
 
-    processors = sgbd.get_processor_by_RAM('32GB')
-    print(processors)
+    # processors = sgbd.get_processor_by_RAM('32GB')
+    # print(processors)
 
-    capacities = sgbd.get_storage_capacity_by_processor('Intel Core i9')
-    print(capacities)
+    # capacities = sgbd.get_storage_capacity_by_processor('Intel Core i9')
+    # print(capacities)
 
-    brands = sgbd.get_brand_by_storage_capacity('1TB SSD')
-    print(brands)
+    # brands = sgbd.get_brand_by_storage_capacity('1TB SSD')
+    # print(brands)
 
-    quantity = sgbd.get_product_quantity_by_brand('HP')
-    print(sgbd.allowed_prd)
-    print(quantity)
+    # quantity = sgbd.get_product_quantity_by_brand('HP')
+    # print(sgbd.allowed_prd)
+    # print(quantity)
 
-    sgbd.update_quantity(1)
+    # sgbd.update_quantity(5)
 
+    pass
