@@ -15,7 +15,7 @@ WORKDIR /app
 RUN pip install --no-cache-dir --upgrade pip
 
 # Install Rasa version 3.5.10
-RUN pip install --no-cache-dir rasa
+RUN pip install --no-cache-dir rasa pandas
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
