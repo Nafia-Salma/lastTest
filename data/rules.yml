@@ -99,6 +99,7 @@ rules:
   - active_loop: product_form
   steps:
   - intent: affirm
+  - action: utter_ok
   - action: action_deactivate_loop
   - active_loop: null
   - action: action_reset_product_form
@@ -125,3 +126,8 @@ rules:
   steps:
   - intent: restart
   - action: action_restart
+
+- rule: say ok when user says yes
+  steps:
+  - intent: affirm
+  - action: utter_ok
