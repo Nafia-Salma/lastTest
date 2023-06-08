@@ -125,3 +125,8 @@ rules:
   steps:
   - intent: restart
   - action: action_restart
+
+- rule: say ok when the user says yes
+  steps:
+  - intent: affirm
+  - action: utter_ok
