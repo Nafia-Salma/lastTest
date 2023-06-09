@@ -17,14 +17,37 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - hiya
+    - greetings
+    - yo
+    - hiya mate
+    - hola
+    - salutations
+    - hey ya
+    - hey buddy
+    - what's up
+    - how's it going
+    - nice to meet you
+    - top of the morning to you
+    - hey, what's happening
+    - hey, long time no see
+    - hey, how's your day going
+    - hey, how are you doing today
+    - hey, how's everything with you
+    - hey, hope you're having a great day
+    - hey, how have you been
+    - hey, what have you been up to lately
 - intent: greet_with_name
   examples: |
     - hey there i am [Samira Alaoui](user_name)
     - hi my name is [Omar Ibn Sina](user_name)
-    - hello i'm [Youness Asdad(user_name)
+    - hello i'm [Youness Asdad](user_name)
     - hey there my name is [Mustapha Khalid](user_name)
     - hi i'm [Salim](user_name)
     - good morning i'm [Salma Nafia](user_name)
+    - hi, I'm Sophia Anderson, nice to meet you
+    - hello, I go by [Daniel Thompson], how about you?
+    - hey, my name is [Emma Davis], what's yours?
 - intent: thanks
   examples: |
     - Thank you
@@ -33,28 +56,110 @@ nlu:
     - Thanks for the help
     - ty
     - thank you
+    - Thank you so much
+    - Thanks a lot
+    - I really appreciate it
+    - I'm grateful
+    - Many thanks
+    - Much obliged
+    - I owe you one
+    - You're amazing
+    - You've been so helpful
+    - I'm thankful for your assistance
+    - That was very kind of you
+    - I'm really thankful for your support
+    - I can't thank you enough
+    - You're the best
+    - I'm so grateful for your help
+    - You made a big difference
+    - I wanted to express my gratitude
+    - You're awesome
+    - Thank you for everything
+    - I'm deeply thankful
+    - You're a lifesaver    
 - intent: help
   examples: |
     - Can you help me?
     - I need help
     - Assist me please
     - Help
-    - help me
+    - Help me
+    - Could you lend me a hand?
+    - I require assistance
+    - Can you give me some guidance?
+    - I'm stuck and need your help
+    - I'm facing an issue and need your support
+    - Can you provide some help?
+    - I'm looking for some help
+    - I'm in a bit of a jam, can you assist?
+    - Can you offer your expertise?
+    - I could really use your help
+    - I'm having trouble and need assistance
+    - Can you point me in the right direction?
+    - I'm seeking some assistance
+    - Can you lend me your knowledge?
+    - Can you give me a hand with this?
+    - I'm struggling and need your help
+    - Can you assist me with this problem?
+    - I'm in need of some help, can you help me out?
+    - Can you offer any guidance?
+    - I need someone to help me, can you?
+    - Can you provide me with some support?
 - intent: bot_challenge
   examples: |
-    - Who are you?
     - What are you?
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    - who are u?
+    - Are you a bot?
+    - Are you a human?
+    - Am I talking to a bot?
+    - Am I talking to a human?
+    - Who are you?
+    - What's your identity?
+    - Are you a real person?
+    - Are you a computer program?
+    - Are you a virtual assistant?
+    - What kind of entity are you?
+    - Can you tell me about yourself?
+    - Are you a human or an AI?
+    - What is your nature?
+    - Are you automated?
+    - Can you introduce yourself?
+    - What is your purpose?
+    - Are you a chatbot?
+    - Are you an AI assistant?
+    - Can you provide some information about yourself?
+    - What is your role?
+    - Are you a machine?
+    - Can you clarify your existence?
+    - Are you a person or a machine?
+    - Can you disclose your identity?
+    - Can you tell me more about who you are?
 - intent: bot_age
   examples: |
     - What's your age?
     - How old are you?
     - Your age?
     - Age?
+    - Can you tell me how old you are?
+    - How many years have you been around?
+    - Are you young or old?
+    - Do you have an age?
+    - When were you born?
+    - How long have you existed?
+    - What is the number of your years?
+    - Are you a new creation or have you been here for a while?
+    - What's the duration of your existence?
+    - Can you disclose your age?
+    - How many years have you been operating?
+    - Are you a recent development or have you been around for a long time?
+    - What is the span of your existence?
+    - Do you age like humans do?
+    - Are you timeless or do you have an age?
+    - How many years have you accumulated?
+    - When did you come into being?
+    - Can you provide some information about your age?
+    - Are you a product of recent technology or have you been here for some time?
+    - How long have you been in existence?
+    - Can you reveal the number of your years?
 - intent: affirm
   examples: |
     - yes
@@ -64,6 +169,28 @@ nlu:
     - that sounds good
     - correct
     - affirm
+    - absolutely
+    - sure
+    - definitely
+    - affirmative
+    - yeah
+    - OK
+    - alright
+    - agreed
+    - precisely
+    - unquestionably
+    - without a doubt
+    - yep
+    - absolutely right
+    - most certainly
+    - no doubt
+    - positively
+    - for sure
+    - you bet
+    - naturally
+    - no question about it
+    - I agree
+    - I concur
 - intent: deny
   examples: |
     - no
@@ -73,17 +200,64 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nah
+    - not at all
+    - negative
+    - definitely not
+    - I disagree
+    - I'm not interested
+    - not my preference
+    - not for me
+    - I would say no
+    - not a chance
+    - not convinced
+    - not in agreement
+    - I'm not inclined to agree
+    - I have to decline
+    - count me out
+    - I'm opposed to that
+    - I have reservations
+    - that doesn't work for me
+    - I'm not on board
+    - I'd rather not
+    - I'm saying no
+    - I'm not keen on that
 - intent: stop
   examples: |
     - stop
     - nevermind
     - please stop
-    - i want to stop
+    - I want to stop
     - stop the form
+    - end
+    - cease
+    - halt
+    - terminate
+    - cancel
+    - quit
+    - discontinue
+    - finish
+    - put an end to
+    - wrap up
+    - conclude
+    - close
+    - abort
+    - suspend
+    - call it off
+    - desist
+    - withdraw
+    - cut off
+    - break off
+    - refrain
+    - halt proceedings
+    - bring to a halt
+    - put a stop to
+    - bring to a close
+    - pull the plug
 - intent: goodbye
   examples: |
     - cu
-    - good by
+    - good bye
     - cee you later
     - good night
     - bye
@@ -92,67 +266,268 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - take care
+    - see you soon
+    - until next time
+    - catch you later
+    - adios
+    - farewell
+    - have a great day
+    - see you next time
+    - see you tomorrow
+    - have a good one
+    - see you in a bit
+    - see you in a while
+    - see you on the flip side
+    - until we meet again
+    - see you down the road
+    - have a wonderful day
+    - see you in a jiffy
 - intent: buy_product
   examples: |
     - i'd like to buy a computer
     - i want a computer
     - can i buy a computer
     - i want to buy a computer
-
+    - where can I purchase a computer?
+    - how can I get a computer?
+    - I'm interested in buying a computer
+    - where can I find computer for sale?
+    - how do I go about buying a computer?
+    - I'm in the market for a computer
+    - what's the process of buying a computer?
+    - can you help me with buying a computer?
+    - I'm looking to purchase a computer
+    - what's the best way to buy a computer?
+    - where should I go to buy a computer?
+    - do you have any recommendations for buying a computer?
+    - I need advice on buying a computer
+    - can you assist me in buying a computer?
+    - I'm considering buying a computer
+    - is it possible to buy a computer from you?
+    - what do I need to know before buying a computer?
+    - can you guide me through the process of buying a computer?
+    - I'm ready to buy a computer
+    - do you have any tips for buying a computer?
+    - i'd like to buy a computer
+    - i want a computer
+    - can i buy a computer
+    - i want to buy a computer
+    - where can I purchase a computer?
+    - how can I get a computer?
+    - I'm interested in buying a computer
+    - where can I find computer for sale?
+    - how do I go about buying a computer?
+    - I'm in the market for a computer
+    - what's the process of buying a computer?
+    - can you help me with buying a computer?
+    - I'm looking to purchase a computer
+    - what's the best way to buy a computer?
+    - where should I go to buy a computer?
+    - do you have any recommendations for buying a computer?
+    - I need advice on buying a computer
+    - can you assist me in buying a computer?
+    - I'm considering buying a computer
+    - is it possible to buy a computer from you?
+    - what do I need to know before buying a computer?
+    - can you guide me through the process of buying a computer?
+    - I'm ready to buy a computer
+    - do you have any tips for buying a computer?
+# - intent: ask_for_categories
+#   exemples: |
+#     - which category do you belong to?
+#     - what categories can you assist with?
+#     - in which categories can you provide information?
+#     - what are the different categories you cover?
+#     - can you list the categories you have knowledge about?
+#     - which areas or topics are you familiar with?
+#     - what subject areas are you trained in?
+#     - are there specific categories you specialize in?
+#     - which domains or fields can you help with?
+#     - can you give me an overview of the categories you can handle?
+#     - are there any specific industries or sectors you focus on?
+#     - what are the main subject categories you can provide information on?
+#     - do you have expertise in any particular areas or industries?
+#     - what kinds of topics can I discuss with you?
 - intent: inform_product_category
   examples: |
     - I'm interested in a [Laptop](product_category)
-    - I want a [Desktop](product_category)
-    - [Desktop](product_category)
+    - I want a [Laptop](product_category)
     - [Laptop](product_category) category please
-    - i want [Desktop](product_category)
+    - i want [Laptop](product_category)
+    - I'm looking for a [Laptop](product_category)
+    - Can you recommend a [Laptop](product_category)?
+    - [Laptop](product_category) options, please
+    - Show me [Laptop](product_category) choices
+    - I need information on [Laptop](product_category)s
+    - Where can I find a good [Laptop](product_category)?
+    - Any recommendations for a [Laptop](product_category)?
+    - Tell me more about [Laptop](product_category)s
+    - I'm considering buying a [Laptop](product_category)
+    - Are there any deals on [Laptop](product_category)s?
+    - Can you help me compare [Laptop](product_category) options?
+    - I prefer a [Laptop](product_category) for my needs
+    - What are the specs of the available [Laptop](product_category)s?
+    - Any discounts on [Laptop](product_category)s?
+    - I'm specifically interested in a [Laptop](product_category)
+    - Show me the range of [Laptop](product_category)s
+    - I need a powerful [Laptop](product_category) for gaming
+    - Can you assist me in finding the right [Laptop](product_category)?
 - intent: inform_product_RAM
   examples: |
     - RAM : [8GB](product_RAM)
     - I'm interested in computers that have [32GB](product_RAM) in the RAM
-    - [16GB](product_RAM)   
-    - I prefer[16GB](product_RAM)
+    - [16GB](product_RAM)
+    - I prefer [16GB](product_RAM)
     - [8GB](product_RAM) would be good
+    - Can you show me laptops with [8GB](product_RAM) of RAM?
+    - I need a desktop with [16GB](product_RAM) RAM
+    - What are the options for [32GB](product_RAM) RAM computers?
+    - I'm specifically looking for [8GB](product_RAM) of RAM
+    - Is it possible to upgrade the RAM to [16GB](product_RAM)?
+    - Any recommendations for a laptop with [8GB](product_RAM) RAM?
+    - Are there any deals on [32GB](product_RAM) RAM computers?
+    - I need a computer with at least [16GB](product_RAM) of RAM
+    - Show me desktops that come with [8GB](product_RAM) RAM
+    - Can you provide more information on [16GB](product_RAM) RAM laptops?
+    - What is the performance difference between [8GB](product_RAM) and [16GB](product_RAM) RAM?
+    - I'm interested in a laptop that supports [32GB](product_RAM) of RAM
+    - Which brand offers reliable computers with [8GB](product_RAM) RAM?
+    - I'm considering upgrading from [8GB](product_RAM) to [16GB](product_RAM) RAM
+    - Show me options for computers with different RAM sizes
 - intent: inform_product_processor
   examples: |
     - processor : [Intel Core i7](product_processor)
-    - I'm interested in computers that have  [Intel Core i5](product_processor) in the processor
+    - I'm interested in computers that have [Intel Core i5](product_processor) in the processor
     - [AMD Ryzen 7](product_processor)
     - [Intel Core i9](product_processor)
+    - Can you show me laptops with [Intel Core i7](product_processor) processors?
+    - I need a desktop with [AMD Ryzen 7](product_processor) processor
+    - What are the options for [Intel Core i5](product_processor) processor computers?
+    - I'm specifically looking for [Intel Core i7](product_processor) processors
+    - Is it possible to upgrade the processor to [Intel Core i9](product_processor)?
+    - Any recommendations for a laptop with [AMD Ryzen 7](product_processor) processor?
+    - Are there any deals on [Intel Core i5](product_processor) processor computers?
+    - I need a computer with at least [Intel Core i7](product_processor) processor
+    - Show me desktops that come with [AMD Ryzen 7](product_processor) processor
+    - Can you provide more information on [Intel Core i9](product_processor) processors?
+    - What is the performance difference between [Intel Core i7](product_processor) and [AMD Ryzen 7](product_processor) processors?
+    - I'm interested in a laptop that supports [Intel Core i5](product_processor) processor
+    - Which brand offers reliable computers with [AMD Ryzen 7](product_processor) processor?
+    - I'm considering upgrading from [Intel Core i7](product_processor) to [Intel Core i9](product_processor) processor
+    - Show me options for computers with different processor types
 - intent: inform_product_brand
   examples: |
     - brand : [Dell](product_brand)
-    - I'm interested in [Sumsung](product_brand) computers
+    - I'm interested in [Samsung](product_brand) computers
     - [HP](product_brand)
     - I want [Lenovo](product_brand)
     - I prefer [CyberPowerPC](product_brand)
+    - Can you show me laptops from [Dell](product_brand)?
+    - I need a desktop from [HP](product_brand)
+    - What are the options for [Samsung](product_brand) computers?
+    - I'm specifically looking for [Dell](product_brand) brand
+    - Is it possible to get a laptop from [Lenovo](product_brand)?
+    - Any recommendations for a [CyberPowerPC](product_brand) computer?
+    - Are there any deals on [HP](product_brand) computers?
+    - I need a computer from [Dell](product_brand) brand
+    - Show me desktops from [Samsung](product_brand)
+    - Can you provide more information on [Lenovo](product_brand) laptops?
+    - What is the reputation of [CyberPowerPC](product_brand) computers?
+    - I'm interested in a laptop with [HP](product_brand) brand
+    - Which brand offers reliable computers apart from [Dell](product_brand)?
+    - I'm considering buying from [Samsung](product_brand) brand
+    - Show me options for computers from different brands
 - intent: inform_product_quantity
   examples: |
     - [20](product_quantity)
-    - give me [5](product_quantity)
+    - Give me [5](product_quantity)
     - I want [10](product_quantity) please
     - [3](product_quantity)
     - [3](product_quantity) please
+    - Can you provide me with [20](product_quantity)?
+    - I'm interested in purchasing [5](product_quantity)
+    - Please add [10](product_quantity) to my order
+    - I need [3](product_quantity) of them
+    - [3](product_quantity) would be sufficient
+    - Is it possible to get [20](product_quantity) in stock?
+    - Can you check the availability of [5](product_quantity)?
+    - How many do you have in stock?
+    - I would like to buy [10](product_quantity) from you
+    - Are there any discounts for purchasing [3](product_quantity)?
+    - I want to place an order for [3](product_quantity) units
+    - What is the maximum quantity I can purchase?
+    - Please ensure that I receive [20](product_quantity) exactly
+    - Do you offer bulk discounts for [5](product_quantity) or more?
+    - I'm interested in buying [10](product_quantity) at a discounted price
 - intent: inform_product_storage_capacity
   examples: |
     - [512GB SSD](product_storage_capacity)
     - I prefer [512GB SSD](product_storage_capacity)
-    - give me [2TB HDD](product_storage_capacity)
+    - Give me [2TB HDD](product_storage_capacity)
     - I want [256GB SSD](product_storage_capacity) please
     - [1TB SSD](product_storage_capacity)
-    - [256GB SSD](product_storage_capacity) please    
+    - [256GB SSD](product_storage_capacity) please
+    - Can you show me options with [512GB SSD](product_storage_capacity)?
+    - I'm interested in computers with [512GB SSD](product_storage_capacity)
+    - Please include [2TB HDD](product_storage_capacity) in my order
+    - I need a laptop with [256GB SSD](product_storage_capacity)
+    - [1TB SSD](product_storage_capacity) would be suitable for my requirements
+    - Is it possible to upgrade the storage to [512GB SSD](product_storage_capacity)?
+    - Can you check the availability of [2TB HDD](product_storage_capacity)?
+    - How much storage do the available options come with?
+    - I would like to have [256GB SSD](product_storage_capacity) in my device
+    - Are there any deals on [1TB SSD](product_storage_capacity) drives?
+    - I want to place an order for a laptop with [256GB SSD](product_storage_capacity)
+    - What is the performance difference between [512GB SSD](product_storage_capacity) and [1TB SSD](product_storage_capacity)?
+    - I'm interested in a computer that supports [512GB SSD](product_storage_capacity)
+    - Can you recommend a brand that offers reliable [256GB SSD](product_storage_capacity) drives?
+    - I'm considering upgrading from [1TB SSD](product_storage_capacity) to [512GB SSD](product_storage_capacity)
 - intent: cancel_order
   examples: |
-    - Can you cancel my order ?
+    - Can you cancel my order?
     - I no longer need this product. Can you please cancel the order?
     - Cancel the order
     - I no longer want this computer
+    - Please cancel my order
+    - Can you assist me in canceling my order?
+    - I've changed my mind. I want to cancel the order.
+    - Is it possible to cancel my order at this stage?
+    - I made a mistake. I would like to cancel the order.
+    - Can you stop the delivery of my order?
+    - I want to cancel my purchase.
+    - I realized I don't need this item. Can you cancel my order?
+    - Sorry, but I need to cancel my order.
+    - I need to cancel the order due to unforeseen circumstances.
+    - Can you provide me with the process to cancel the order?
+    - I don't want to proceed with this order. Please cancel it.
+    - Please confirm if it's possible to cancel the order.
+    - I'd like to request a cancellation for my recent order.
+    - I've decided not to proceed with the purchase. Cancel the order, please.
+    - I no longer require the product. Can you cancel the order for me?
 - intent: show_report
   examples: |
     - Can you show me a report of my inventory?
     - How is my inventory doing?
     - Can you give me an overview of my stock levels?
     - Show me a report of my stock levels
+    - I need a detailed inventory report
+    - Can you provide me with an inventory summary?
+    - What is the current status of my inventory?
+    - I'd like to see a report on my available stock
+    - Is there a way to view my inventory levels?
+    - Please generate an inventory report for me
+    - How can I access an inventory overview?
+    - I want to review my inventory status
+    - Can you show me the stock report?
+    - I need to analyze my inventory data. Can you assist?
+    - Is there a way to check my inventory levels in real-time?
+    - I'm interested in monitoring my inventory performance. Can you help?
+    - Please provide me with a stock report for analysis
+    - I'd like to have an up-to-date inventory report
+    - Can you give me insights into my current inventory situation?
+    - How can I obtain a comprehensive inventory analysis?
+  
 - intent: out_of_scope
   examples: |
     - jhdkjdhksdkfa
@@ -183,6 +558,22 @@ nlu:
 - intent: restart
   examples: |
     - refresh
-    - refresh please
-    - restart
-    - restart the conversation
+    - Refresh, please
+    - Restart
+    - Restart the conversation
+    - Can we start over?
+    - Let's refresh
+    - Reset the chat
+    - Begin again
+    - Clear the conversation
+    - Start from scratch
+    - I want to restart
+    - Can you refresh the session?
+    - Reset the dialogue
+    - Start a new conversation
+    - Let's start from the beginning
+    - I'd like to begin anew
+    - Can we restart the chatbot?
+    - Refresh the interaction
+    - Start over from the initial point
+    - Clear all previous messages
