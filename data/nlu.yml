@@ -124,7 +124,7 @@ nlu:
     - Are you automated?
     - Can you introduce yourself?
     - What is your purpose?
-    - Are you a chatbot?
+    - Are you a cha TBot?
     - Are you an AI assistant?
     - Can you provide some information about yourself?
     - What is your role?
@@ -359,25 +359,25 @@ nlu:
     - Can you assist me in finding the right [Laptop](product_category)?
 - intent: inform_product_RAM
   examples: |
-    - RAM : [8GB](product_RAM)
-    - I'm interested in computers that have [32GB](product_RAM) in the RAM
-    - [16GB](product_RAM)
-    - I prefer [16GB](product_RAM)
-    - [8GB](product_RAM) would be good
-    - Can you show me laptops with [8GB](product_RAM) of RAM?
-    - I need a desktop with [16GB](product_RAM) RAM
-    - What are the options for [32GB](product_RAM) RAM computers?
-    - I'm specifically looking for [8GB](product_RAM) of RAM
-    - Is it possible to upgrade the RAM to [16GB](product_RAM)?
-    - Any recommendations for a laptop with [8GB](product_RAM) RAM?
-    - Are there any deals on [32GB](product_RAM) RAM computers?
-    - I need a computer with at least [16GB](product_RAM) of RAM
-    - Show me desktops that come with [8GB](product_RAM) RAM
-    - Can you provide more information on [16GB](product_RAM) RAM laptops?
-    - What is the performance difference between [8GB](product_RAM) and [16GB](product_RAM) RAM?
-    - I'm interested in a laptop that supports [32GB](product_RAM) of RAM
-    - Which brand offers reliable computers with [8GB](product_RAM) RAM?
-    - I'm considering upgrading from [8GB](product_RAM) to [16GB](product_RAM) RAM
+    - RAM : [8 GB](product_RAM)
+    - I'm interested in computers that have [32 GB](product_RAM) in the RAM
+    - [16 GB](product_RAM)
+    - I prefer [16 GB](product_RAM)
+    - [8 GB](product_RAM) would be good
+    - Can you show me laptops with [8 GB](product_RAM) of RAM?
+    - I need a desktop with [16 GB](product_RAM) RAM
+    - What are the options for [32 GB](product_RAM) RAM computers?
+    - I'm specifically looking for [8 GB](product_RAM) of RAM
+    - Is it possible to upgrade the RAM to [16 GB](product_RAM)?
+    - Any recommendations for a laptop with [8 GB](product_RAM) RAM?
+    - Are there any deals on [32 GB](product_RAM) RAM computers?
+    - I need a computer with at least [16 GB](product_RAM) of RAM
+    - Show me desktops that come with [8 GB](product_RAM) RAM
+    - Can you provide more information on [16 GB](product_RAM) RAM laptops?
+    - What is the performance difference between [8 GB](product_RAM) and [16 GB](product_RAM) RAM?
+    - I'm interested in a laptop that supports [32 GB](product_RAM) of RAM
+    - Which brand offers reliable computers with [8 GB](product_RAM) RAM?
+    - I'm considering upgrading from [8 GB](product_RAM) to [16 GB](product_RAM) RAM
     - Show me options for computers with different RAM sizes
 - intent: inform_product_processor
   examples: |
@@ -446,27 +446,27 @@ nlu:
     - I'm interested in buying [10](product_quantity) at a discounted price
 - intent: inform_product_storage_capacity
   examples: |
-    - [512GB SSD](product_storage_capacity)
-    - I prefer [512GB SSD](product_storage_capacity)
-    - Give me [2TB HDD](product_storage_capacity)
-    - I want [256GB SSD](product_storage_capacity) please
-    - [1TB SSD](product_storage_capacity)
-    - [256GB SSD](product_storage_capacity) please
-    - Can you show me options with [512GB SSD](product_storage_capacity)?
-    - I'm interested in computers with [512GB SSD](product_storage_capacity)
-    - Please include [2TB HDD](product_storage_capacity) in my order
-    - I need a laptop with [256GB SSD](product_storage_capacity)
-    - [1TB SSD](product_storage_capacity) would be suitable for my requirements
-    - Is it possible to upgrade the storage to [512GB SSD](product_storage_capacity)?
-    - Can you check the availability of [2TB HDD](product_storage_capacity)?
+    - [512 GB SSD](product_storage_capacity)
+    - I prefer [512 GB SSD](product_storage_capacity)
+    - Give me [2 TB HDD](product_storage_capacity)
+    - I want [256 GB SSD](product_storage_capacity) please
+    - [1 TB SSD](product_storage_capacity)
+    - [256 GB SSD](product_storage_capacity) please
+    - Can you show me options with [512 GB SSD](product_storage_capacity)?
+    - I'm interested in computers with [512 GB SSD](product_storage_capacity)
+    - Please include [2 TB HDD](product_storage_capacity) in my order
+    - I need a laptop with [256 GB SSD](product_storage_capacity)
+    - [1 TB SSD](product_storage_capacity) would be suitable for my requirements
+    - Is it possible to upgrade the storage to [512 GB SSD](product_storage_capacity)?
+    - Can you check the availability of [2 TB HDD](product_storage_capacity)?
     - How much storage do the available options come with?
-    - I would like to have [256GB SSD](product_storage_capacity) in my device
-    - Are there any deals on [1TB SSD](product_storage_capacity) drives?
-    - I want to place an order for a laptop with [256GB SSD](product_storage_capacity)
-    - What is the performance difference between [512GB SSD](product_storage_capacity) and [1TB SSD](product_storage_capacity)?
-    - I'm interested in a computer that supports [512GB SSD](product_storage_capacity)
-    - Can you recommend a brand that offers reliable [256GB SSD](product_storage_capacity) drives?
-    - I'm considering upgrading from [1TB SSD](product_storage_capacity) to [512GB SSD](product_storage_capacity)
+    - I would like to have [256 GB SSD](product_storage_capacity) in my device
+    - Are there any deals on [1 TB SSD](product_storage_capacity) drives?
+    - I want to place an order for a laptop with [256 GB SSD](product_storage_capacity)
+    - What is the performance difference between [512 GB SSD](product_storage_capacity) and [1 TB SSD](product_storage_capacity)?
+    - I'm interested in a computer that supports [512 GB SSD](product_storage_capacity)
+    - Can you recommend a brand that offers reliable [256 GB SSD](product_storage_capacity) drives?
+    - I'm considering upgrading from [1 TB SSD](product_storage_capacity) to [512 GB SSD](product_storage_capacity)
 - intent: cancel_order
   examples: |
     - Can you cancel my order?
@@ -511,7 +511,6 @@ nlu:
     - I'd like to have an up-to-date inventory report
     - Can you give me insights into my current inventory situation?
     - How can I obtain a comprehensive inventory analysis?
-  
 - intent: out_of_scope
   examples: |
     - jhdkjdhksdkfa
@@ -557,7 +556,7 @@ nlu:
     - Start a new conversation
     - Let's start from the beginning
     - I'd like to begin anew
-    - Can we restart the chatbot?
+    - Can we restart the cha TBot?
     - Refresh the interaction
     - Start over from the initial point
     - Clear all previous messages

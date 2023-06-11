@@ -40,7 +40,7 @@ stories:
     - slot_was_set:
       - requested_slot: product_RAM
     - slot_was_set:
-      - product_storage_capacity: 16GB   
+      - product_storage_capacity: 16 GB   
     - slot_was_set:
       - requested_slot: product_pocessor
     - slot_was_set:
@@ -48,7 +48,7 @@ stories:
     - slot_was_set:
       - requested_slot: product_storage_capacity
     - slot_was_set:
-      - product_storage_capacity: 512GB SSD  
+      - product_storage_capacity: 512 GB SSD  
     - slot_was_set:
       - requested_slot: product_brand
     - slot_was_set:
